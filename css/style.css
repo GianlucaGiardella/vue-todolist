@@ -44,6 +44,10 @@ input {
     line-height: 2rem;
 }
 
+.error {
+    color: red;
+}
+
 button {
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -63,7 +67,7 @@ button {
 }
 
 .done {
-    background-color: red;
+    text-decoration: line-through;
 }
 
 .empty {
