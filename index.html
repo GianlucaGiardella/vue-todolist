@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="js/script-vue.js" defer></script>
+    <title>Todo List</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="todo">
+                <h1>todo list</h1>
+                <input type="text" placeholder="Scrivi qui">
+                <button>Aggiungi</button>
+                <ul v-if="todoArr.length > 0" class="list">
+                    <li v-for="(todoObj, i) in todoArr" :class="{done: todoObj.done}" @click="checkTodo(i, todoObj.done)">{{ todoObj.text }}</li>
+                </ul>
+                <div v-else="todoArr.length === 0" class="empty">Non ci sono cose da fare</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
