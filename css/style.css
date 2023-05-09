@@ -66,6 +66,20 @@ button {
     border-radius: 1rem;
 }
 
+.list li {
+    display: flex;
+}
+
+
+.list li .text {
+    flex: 1 0 0;
+}
+
+.list li .text:hover,
+.list li .delete:hover {
+    cursor: pointer;
+}
+
 .done {
     text-decoration: line-through;
 }

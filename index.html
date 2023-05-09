@@ -16,12 +16,18 @@
         <div id="app">
             <div class="todo">
                 <h1>todo list</h1>
-                <input  type="text" placeholder="Scrivi qui" v-model="newTodo" @keyup.enter="addTodo" @click="removeError">
+                <input type="text" placeholder="Scrivi qui" v-model="newTodo" @keyup.enter="addTodo"
+                    @click="removeError">
                 <p class="error" v-if="inputValidity">Devi inserire almeno 5 caratteri</p>
                 <button @click="addTodo">Aggiungi</button>
+
                 <ul v-if="todoArr.length > 0" class="list">
-                    <li v-for="(todoObj, i) in todoArr" :class="{done: todoObj.done}" @click="checkTodo(i, todoObj.done)">{{ todoObj.text }}</li>
+                    <li v-for="(todoObj, i) in todoArr">
+                        <span class="text" @click="checkTodo(i, todoObj.done)" :class="{done: todoObj.done}">{{ todoObj.text }}</span>
+                        <span class="delete" @click="deleteTodo(i)">X</span>
+                    </li>
                 </ul>
+
                 <div v-else="todoArr.length === 0" class="empty">Non ci sono cose da fare</div>
             </div>
         </div>
