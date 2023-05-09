@@ -17,7 +17,6 @@ const app = Vue.createApp({
     },
     methods: {
         checkTodo(i, todo) {
-            console.log(todo);
             this.todoArr[i].done = !todo;
         },
         addTodo() {
@@ -33,6 +32,9 @@ const app = Vue.createApp({
                 this.inputValidity = true;
             }
             this.newTodo = "";
+        },
+        deleteTodo(i){
+            this.todoArr.splice(i, 1);
         },
         removeError() {
             this.inputValidity = false;
